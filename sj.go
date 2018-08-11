@@ -24,7 +24,7 @@ func search(needle string, haystack string) (*[]string, error) {
 	var decode map[string]json.RawMessage
 	err := json.Unmarshal([]byte(haystack), &decode)
 	if err != nil {
-		return nil, err
+		return &result, nil
 	}
 
 	for k, v := range decode {
